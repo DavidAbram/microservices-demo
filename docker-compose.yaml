@@ -1,0 +1,20 @@
+version: "3"
+services:
+  micro-date:
+    build:
+      context: micro-date
+      dockerfile: dockerfile
+    command: node index.js
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+  micro-greet:
+    build:
+      context: micro-greet
+      dockerfile: dockerfile
+    command: ./main
+    ports:
+      - "1337:1337"
+    expose:
+      - "1337"
